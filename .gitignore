@@ -1,0 +1,11 @@
+node_modules/
+.DS_Store
+dist/
+release/
+.cache/
+.codegraph/
+.env*
+!.env.example
+data/images/
+public/data/
+design/ios27-v[1-6]*/

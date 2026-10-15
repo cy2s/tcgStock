@@ -1,0 +1,21 @@
+{
+  "name": "tcgstock",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "build:pages": "node scripts/build-pages.mjs",
+    "test": "node --test src/*.test.mjs",
+    "start": "node server.mjs",
+    "dev": "vite --host 127.0.0.1"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5",
+    "vite": "^7.1.12"
+  }
+}
