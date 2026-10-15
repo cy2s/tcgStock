@@ -106,7 +106,7 @@ const build = spawnSync(process.execPath, [path.join(root, 'node_modules/vite/bi
 });
 if (build.status !== 0) process.exit(build.status || 1);
 await mkdir(path.join(root, 'dist', 'design'), { recursive: true });
-for (const name of ['index.html', 'app.js', 'styles.css', 'assets', 'README.md', 'ios27-v7-rifthunt']) {
+for (const name of ['index.html', 'app.js', 'styles.css', 'assets', 'README.md', 'ios27-v8-backup']) {
   await cp(path.join(root, 'design', name), path.join(root, 'dist', 'design', name), { recursive: true });
 }
 await writeFile(path.join(root, 'dist', '.nojekyll'), '');

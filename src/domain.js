@@ -40,7 +40,7 @@ export function depositFunds(account, rawAmount, now = new Date()) {
   const amount = Number(raw);
   if (!Number.isFinite(amount) || amount < 0.01 || amount > MAX_DEPOSIT) throw new Error(`单笔模拟充值须在 $0.01—$${MAX_DEPOSIT.toLocaleString('en-US')} 之间`);
   const cash = Math.round((account.cash + amount) * 100) / 100;
-  const deposit = { id: crypto.randomUUID(), accountId: account.id, amount, balanceAfter: cash, createdAt: now.toISOString() };
+  const deposit = { id: crypto.randomUUID(), accountId: account.id, sequence: account.orders.length + (account.deposits || []).length + 1, amount, balanceAfter: cash, createdAt: now.toISOString() };
   return { ...account, cash, deposits: [deposit, ...(account.deposits || [])] };
 }
 
@@ -79,6 +79,6 @@ export function executeTrade(account, order, now = new Date()) {
     cash,
     realized,
     positions,
-    orders: [{ ...order, amount, fee, total, balanceAfter: cash, feePolicy: FEE_POLICY, feeRate: FEE_RATE, minimumFee: MIN_FEE, orderId: crypto.randomUUID(), createdAt: now.toISOString() }, ...account.orders],
+    orders: [{ ...order, sequence: account.orders.length + (account.deposits || []).length + 1, amount, fee, total, balanceAfter: cash, feePolicy: FEE_POLICY, feeRate: FEE_RATE, minimumFee: MIN_FEE, orderId: crypto.randomUUID(), createdAt: now.toISOString() }, ...account.orders],
   };
 }
