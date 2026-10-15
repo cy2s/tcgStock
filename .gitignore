@@ -1,4 +1,4 @@
-node_modules/
+node_modules
 .DS_Store
 dist/
 release/
@@ -6,6 +6,6 @@ release/
 .codegraph/
 .env*
 !.env.example
-data/images/
+data/images
 public/data/
 design/ios27-v[1-6]*/

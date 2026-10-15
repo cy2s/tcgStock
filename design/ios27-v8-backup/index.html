@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#eef2f8" />
+  <title>tcgStock · iOS 27 交互设计稿 v8</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="studio">
+    <aside class="studio-sidebar">
+      <div class="studio-brand"><span class="brand-mark">T</span><div><strong>tcgStock</strong><small>iOS 27 · 设计稿 v8</small></div></div>
+      <div class="sidebar-kicker">页面目录</div>
+      <nav id="screen-list" aria-label="设计稿页面"></nav>
+      <div class="studio-sidebar-bottom">
+        <span class="status-dot"></span> 可点击原型 · 示例行情
+      </div>
+    </aside>
+
+    <main class="studio-main">
+      <header class="studio-header">
+        <div>
+          <div class="eyebrow">PRODUCT DESIGN / 01</div>
+          <h1>让卡牌像资产一样被观察与交易</h1>
+          <p>Riftbound 首发 · 独立模拟账户 · RiftHunt 日价与本地卡图 · 用真实日价驱动模拟买卖</p>
+        </div>
+        <div class="studio-actions">
+          <button id="mode-preview" class="studio-action active" type="button">交互预览</button>
+          <button id="mode-board" class="studio-action" type="button">全部页面</button>
+        </div>
+      </header>
+
+      <section id="preview-view" class="preview-view">
+        <div class="phone-stage">
+          <div class="stage-orbit orbit-one"></div><div class="stage-orbit orbit-two"></div>
+          <div class="phone-device"><div class="phone-island"></div><div id="app-root" class="phone-screen"></div></div>
+        </div>
+        <aside class="inspector">
+          <div class="inspector-header"><span class="inspector-number" id="inspector-number">01</span><span>SCREEN NOTES</span></div>
+          <h2 id="inspector-title"></h2>
+          <p id="inspector-desc"></p>
+          <div id="inspector-points" class="inspector-points"></div>
+          <div class="inspector-divider"></div>
+          <div class="inspector-caption">设计基准</div>
+          <div class="spec-row"><span>画板</span><strong>390 × 844 pt</strong></div>
+          <div class="spec-row"><span>系统</span><strong>iOS 27 / 浅色</strong></div>
+          <div class="spec-row"><span>行情</span><strong>日级价格快照</strong></div>
+          <div class="spec-row"><span>交易</span><strong>07:00—23:00 北京时间</strong></div>
+          <div class="inspector-hint">点击手机中的按钮即可走完整流程。价格和持仓为设计示例，原型不会发起交易。</div>
+        </aside>
+      </section>
+
+      <section id="board-view" class="board-view hidden"><div id="board-grid" class="board-grid"></div></section>
+
+      <footer class="studio-footer">
+        <span>设计参考：Apple iOS 27 Liquid Glass 的清晰层级与浮动导航；长桥的行情、个卡、订单、资产结构。</span>
+        <span>tcgStock · Concept v8</span>
+      </footer>
+    </main>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
