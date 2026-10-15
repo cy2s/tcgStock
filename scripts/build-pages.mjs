@@ -23,7 +23,7 @@ async function bulk(name, key, ttl) {
   }
   try {
     const response = await fetch(`https://api.rifthunt.com/bulk/${key}`, {
-      headers: { 'User-Agent': 'tcgStock/0.1 (https://github.com/GenjiCy/tcgStock)', accept: 'application/json' },
+      headers: { 'User-Agent': 'tcgStock/0.1 (https://github.com/cy2s/tcgStock)', accept: 'application/json' },
       signal: AbortSignal.timeout(30000),
     });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -68,7 +68,7 @@ async function image(card) {
         if (url.protocol !== 'https:' || !hosts.has(url.hostname)) throw new Error('Unrecognized image host');
         // This CDN serves smaller variants; 600px high is enough for the 420px-wide output.
         if (url.hostname === 'tcgplayer-cdn.tcgplayer.com') url.pathname = url.pathname.replace('_in_1000x1000.', '_in_600x600.');
-        const response = await fetch(url, { headers: { 'User-Agent': 'tcgStock/0.1 (https://github.com/GenjiCy/tcgStock)' }, signal: AbortSignal.timeout(20000), redirect: 'error' });
+        const response = await fetch(url, { headers: { 'User-Agent': 'tcgStock/0.1 (https://github.com/cy2s/tcgStock)' }, signal: AbortSignal.timeout(20000), redirect: 'error' });
         if (!response.ok) throw new Error(`Image HTTP ${response.status}`);
         input = Buffer.from(await response.arrayBuffer());
         if (input.length > 5 * 1024 * 1024) throw new Error('Image exceeds 5 MB');

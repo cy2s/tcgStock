@@ -2,7 +2,7 @@
 
 React HTML 版本。使用 RiftHunt 批量导出的美区英文卡牌与日级参考价，提供多模拟账户、USD 虚拟资金、买卖、手续费、持仓、账户分析、交易与充值记录、分享。
 
-在线使用：[tcgStock](https://genjicy.github.io/tcgStock/) · [iOS 交互设计稿](https://genjicy.github.io/tcgStock/design/)
+在线使用：[tcgStock](https://cy2s.github.io/tcgStock/) · [iOS 交互设计稿](https://cy2s.github.io/tcgStock/design/)
 
 ## GitHub Pages
 
